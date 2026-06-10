@@ -27,6 +27,27 @@ const $ = sel => document.querySelector(sel);
 const mostrar = el => el.classList.remove('hidden');
 const ocultar = el => el.classList.add('hidden');
 
+/* ===== Banderas (nombre del equipo -> código ISO para flagcdn) ===== */
+const BANDERAS = {
+  "México":"mx", "Sudáfrica":"za", "Corea del Sur":"kr", "República Checa":"cz",
+  "Canadá":"ca", "Bosnia y Herzegovina":"ba", "Catar":"qa", "Suiza":"ch",
+  "Brasil":"br", "Marruecos":"ma", "Haití":"ht", "Escocia":"gb-sct",
+  "Estados Unidos":"us", "Paraguay":"py", "Australia":"au", "Turquía":"tr",
+  "Alemania":"de", "Curazao":"cw", "Costa de Marfil":"ci", "Ecuador":"ec",
+  "Países Bajos":"nl", "Japón":"jp", "Túnez":"tn", "Suecia":"se",
+  "Bélgica":"be", "Egipto":"eg", "Irán":"ir", "Nueva Zelanda":"nz",
+  "España":"es", "Cabo Verde":"cv", "Arabia Saudita":"sa", "Uruguay":"uy",
+  "Francia":"fr", "Senegal":"sn", "Irak":"iq", "Noruega":"no",
+  "Argentina":"ar", "Argelia":"dz", "Austria":"at", "Jordania":"jo",
+  "Portugal":"pt", "RD Congo":"cd", "Uzbekistán":"uz", "Colombia":"co",
+  "Inglaterra":"gb-eng", "Croacia":"hr", "Ghana":"gh", "Panamá":"pa"
+};
+function bandera(nombre){
+  const code = BANDERAS[nombre];
+  if(!code) return '';
+  return `<img class="flag" src="https://flagcdn.com/40x30/${code}.png" alt="" loading="lazy">`;
+}
+
 /* ===== LOGIN (con auto-registro la primera vez) ===== */
 async function entrar(){
   const nombre = $('#inNombre').value.trim();
@@ -117,11 +138,11 @@ async function pintarPronosticos(){
     card.dataset.fase = p.fase || 'grupos';
     card.innerHTML = `
       <div class="equipos">
-        <span>${p.equipo_a}</span>
+        <span>${p.equipo_a} ${bandera(p.equipo_a)}</span>
         <input class="goles ga" type="number" min="0" inputmode="numeric" value="${pred.goles_a ?? ''}">
         <span class="vs">-</span>
         <input class="goles gb" type="number" min="0" inputmode="numeric" value="${pred.goles_b ?? ''}">
-        <span>${p.equipo_b}</span>
+        <span>${bandera(p.equipo_b)} ${p.equipo_b}</span>
       </div>
       <div class="meta">${p.fecha || ''} ${p.hora || ''}</div>`;
     cont.appendChild(card);

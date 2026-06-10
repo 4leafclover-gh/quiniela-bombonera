@@ -41,4 +41,6 @@ input{width:100%;padding:.6rem;border:1px solid #d1d5db;border-radius:10px;font-
 .equipos>span:first-child{text-align:right}
 .goles{width:48px!important;text-align:center;padding:.4rem;margin:0}
 .vs{flex:0 0 auto!important;color:var(--muted)}
+.flag{width:20px;height:15px;object-fit:cover;border-radius:2px;
+  vertical-align:middle;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
 .meta{color:var(--muted);font-size:.75rem;margin-top:.35rem;text-align:center}
