@@ -1,0 +1,44 @@
+:root{
+  --azul:#0a3d91; --amarillo:#f4c20d; --bg:#f4f6fb; --card:#fff;
+  --txt:#1a1a2e; --muted:#6b7280; --ok:#0a7d3b; --rojo:#c0341d; --radio:14px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+.hidden{display:none!important}
+.muted{color:var(--muted);font-size:.9rem}
+.msg{min-height:1.2em;font-size:.9rem;margin:.4rem 0;color:var(--ok)}
+
+.topbar{display:flex;justify-content:space-between;align-items:center;
+  background:var(--azul);color:#fff;padding:.8rem 1rem;position:sticky;top:0;z-index:5}
+.topbar h1{font-size:1.1rem;margin:0;border-bottom:3px solid var(--amarillo);padding-bottom:2px}
+.user-box{display:flex;gap:.6rem;align-items:center;font-size:.9rem}
+
+#app{max-width:640px;margin:0 auto;padding:1rem 1rem 6rem}
+.card{background:var(--card);border-radius:var(--radio);padding:1.2rem;margin-bottom:1rem;
+  box-shadow:0 1px 4px rgba(0,0,0,.08)}
+h2{margin:.2rem 0 .8rem;font-size:1.15rem}
+label{display:block;margin:.5rem 0;font-size:.85rem;color:var(--muted)}
+input{width:100%;padding:.6rem;border:1px solid #d1d5db;border-radius:10px;font-size:1rem;margin-top:.2rem}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+
+.btn{background:var(--azul);color:#fff;border:none;padding:.75rem 1.2rem;border-radius:12px;
+  font-size:1rem;font-weight:600;width:100%;margin-top:.6rem;cursor:pointer}
+.btn:active{opacity:.85}
+.btn-ghost{background:transparent;border:1px solid #fff;color:#fff;padding:.35rem .7rem;
+  border-radius:8px;cursor:pointer;font-size:.85rem}
+.btn-fixed{position:fixed;bottom:0;left:0;right:0;max-width:640px;margin:0 auto;
+  border-radius:0;z-index:4;box-shadow:0 -2px 8px rgba(0,0,0,.12)}
+
+.alerta{background:#fde8e4;color:var(--rojo);border:1px solid var(--rojo);
+  padding:.6rem .8rem;border-radius:10px;margin-bottom:1rem;font-size:.9rem}
+
+.grupo-titulo{margin:1.2rem 0 .4rem;color:var(--azul);font-size:1rem;
+  border-left:4px solid var(--amarillo);padding-left:.5rem}
+.partido{background:var(--card);border-radius:12px;padding:.7rem .8rem;margin-bottom:.6rem;
+  box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.equipos{display:flex;align-items:center;gap:.4rem;font-size:.9rem}
+.equipos>span{flex:1}
+.equipos>span:first-child{text-align:right}
+.goles{width:48px!important;text-align:center;padding:.4rem;margin:0}
+.vs{flex:0 0 auto!important;color:var(--muted)}
+.meta{color:var(--muted);font-size:.75rem;margin-top:.35rem;text-align:center}

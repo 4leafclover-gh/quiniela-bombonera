@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiniela La Bombonera</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>⚽ La Bombonera</h1>
+    <div id="userBox" class="user-box hidden">
+      <span id="userName"></span>
+      <button id="btnSalir" class="btn-ghost">Salir</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- ===== LOGIN ===== -->
+    <section id="vistaLogin" class="card">
+      <h2>Entrar</h2>
+      <p class="muted">Escribe tu nombre y un PIN. Si es tu primera vez, quedas registrado automáticamente.</p>
+      <label>Nombre<input id="inNombre" type="text" autocomplete="off"></label>
+      <label>PIN<input id="inPin" type="password" inputmode="numeric" autocomplete="off"></label>
+      <button id="btnEntrar" class="btn">Entrar</button>
+      <p id="loginMsg" class="msg"></p>
+    </section>
+
+    <!-- ===== APP ===== -->
+    <section id="vistaApp" class="hidden">
+      <div id="alertaPago" class="alerta hidden">⚠️ Aún no registras tu pago. Recuérdaselo al admin (por ahora igual puedes guardar pronósticos).</div>
+
+      <!-- Admin: agregar partido -->
+      <section id="adminPanel" class="card hidden">
+        <h2>Admin · Agregar partido</h2>
+        <div class="grid2">
+          <label>Equipo A<input id="aEqA" type="text"></label>
+          <label>Equipo B<input id="aEqB" type="text"></label>
+          <label>Grupo<input id="aGrupo" type="text" maxlength="2" placeholder="A"></label>
+          <label>Fecha<input id="aFecha" type="date"></label>
+          <label>Hora<input id="aHora" type="time"></label>
+        </div>
+        <button id="btnAddPartido" class="btn">Guardar partido</button>
+        <p id="adminMsg" class="msg"></p>
+      </section>
+
+      <h2>Tus pronósticos</h2>
+      <p class="muted">Pon el marcador que crees para cada partido y pulsa guardar.</p>
+      <div id="listaPartidos" class="lista"></div>
+      <button id="btnGuardar" class="btn btn-fixed">Guardar pronósticos</button>
+      <p id="saveMsg" class="msg" style="margin-bottom:3.5rem"></p>
+    </section>
+  </main>
+
+  <!-- Firebase Compat 10.12.2 -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
